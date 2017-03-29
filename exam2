@@ -1,0 +1,74 @@
+Evaluación Rápida 6K
+
+Diseña las especificaciones de un ejercicio que requiera el uso de las técnicas de partición de equivalencia y análisis de valores límite.
+Indica a qué nivel de testeo corresponde dicho ejercicio y describe brevemente por qué.
+Entregable: Archivo nuevo de texto que incluya los puntos 1 y 2:
+
+Ejercicio: _______________Aplicación de compra de articulos (interfaz de registro de usuario nuevo)
+Nivel de prueba: ____unit
+
+Porque:  Esta no depende de más partes del sistema para funcionar, solamente trabaja en un bloque. El resultado esperado es 
+que aparezca un mensaje diciendo que el usuario a sido creado. En caso de que las particiones invalidas se introduzca muestre un mensaje 
+de error.
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Se realiza la aplicación para la compra de artículos por internet en una 
+nuevo página web llama www.compraarticulostestingonline.com.
+
+Para poder realizar una compra es necesario crear una cuenta, para esto se requiere que llenen los siguientes campos.
+
+Nombre de Usuario - Este campo solamente podrá recibir caracteres tipo Char A-Z
+Nombre Real       - Este campo solamente podrá recibir caracteres tipo Char A-Z
+Apellidos         - Este campo solamente podrá recibir caracteres tipo Char A-Z
+Edad              -  Numero del 18 al 100
+
+
+
+-----------------------------------Resultados esperados-----------------------------------------------------------------------------
+Nombre
+
+Particiones invalidas
+
+{  !"·$%&/(),, } 
+Se espera que las particiones invalidas no permitan crear un nuevo usuario y se muestre un mensaje de error
+
+
+Particiones Validas 
+{  ABC,,,,XYZ  }
+
+-----------------------------------Resultados esperados-----------------------------------------------------------------------------
+Nombre real 
+
+Particiones invalidas
+
+{  !"·$%&/(),, } 
+Se espera que las particiones invalidas no permitan crear un nuevo usuario y se muestre un mensaje de error
+
+
+Particiones Validas 
+{  ABC,,,,XYZ  }
+
+-----------------------------------Resultados esperados-----------------------------------------------------------------------------
+Apellidos
+
+Particiones invalidas
+
+{  !"·$%&/(),, } 
+
+Se espera que las particiones invalidas no permitan crear un nuevo usuario y se muestre un mensaje de error
+
+Particiones Validas 
+{  ABC,,,,XYZ  }
+-----------------------------------Resultados esperados-----------------------------------------------------------------------------
+Edad
+Particiones invalidas
+
+{ ,,-2,-1,0 } { 1,2,,,18 } { 101,102,103,, } 
+
+Se espera que las particiones invalidas no permitan crear un nuevo usuario y se muestre un mensaje de error
+
+Particiones Validas 
+{  18,19,20,,,,98,99,100 }                   
+
